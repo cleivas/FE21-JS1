@@ -1,31 +1,53 @@
-const die1 = {
-    side: 6,
-    rollDie: function(){
-        return Math.floor(1+Math.random() * this.side)
+//En tärning som är ett objekt sparat i en variabel
+const die = {
+    sides: 6,
+    currentSide: 1,
+    roll: function(){
+        this.currentSide = Math.ceil(Math.random()*this.sides);
     }
 }
-console.log(die1.rollDie());
+//Default-värdet av currentSide är ett
+console.log(die.currentSide);
 
-//Vi lägger till ett tärningsobjekt till arrayen dice för varje loop
+//Efter att vi kastat tärningen får currentSide ett nytt värde
+die.roll();
+console.log(die.currentSide);
+
+//Vi skapar en tom array där vi sedan sparar ner 5 stycken tärningsobjekt, ett i varje element
 const dice = [];
 for(let i=0; i<5; i++){
     dice.push(
         {
-            side: 6,
-            currentValue: 1,
-            //Metoden genererar ett random nummer 1 till 6 och sparar i egenskapen currentValue
-            rollDie: function(){
-                this.currentValue = Math.floor(1+Math.random() * this.side)
+            sides: 6,
+            currentSide: 1,
+            roll: function(){
+                this.currentSide = Math.ceil(Math.random()*this.sides);
             }
-        })
+        }
+    )
 }
 console.log(dice);
-//Alla currentValue är 1, vi loggar värdena för att visa
+
+//Vi går igenom alla enskilda tärningsobjekt och 'kastar' dem. När vi sedan loggar arrayn ser vi att alla currentValue har fått andra värden
 for(let i=0; i<dice.length; i++){
-    console.log(dice[i].currentValue);
+    dice[i].roll();
 }
-//Vi slår alla tärningar och loggar det nya värdet
-for(let i=0; i<dice.length; i++){
-    dice[i].rollDie();
-    console.log(dice[i].currentValue);
+console.log(dice);
+
+let person = {
+    name: 'Sixten Faceplant',
+    email: 'sixten.faceplant@zocom.se',
+    role: 'ninjah',
+    adress: {
+        street: 'Karatevägen 3',
+        zip: '41477',
+        city: 'Kablam City'
+    }
+}
+
+let person = { 
+    name: 'sixten',
+    email: 'sixten@zocom.se', 
+    role: 'ninjah',
+    age: 32 
 }
