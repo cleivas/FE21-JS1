@@ -1,5 +1,5 @@
 //Lägg till din egna KEY
-const KEY = '1268fb4f19e35fcb49e9d0332f9ee970';
+const KEY = '';
 let searchText = 'frog';
 
 //Vi söker endast på 1foto per sida och 1 sida
