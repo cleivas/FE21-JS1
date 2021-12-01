@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="#" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='app.js' defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Flickr Search</title>
+</head>
+
+<body>
+    <h1>Flickr Search</h1>
+    <form>
+        <fieldset>
+            <legend>What are you looking for?</legend>
+            <p>
+                <input type="text" name="search-term" id="search_term" placeholder="Image search">
+            </p>
+            <p>
+                <input type="number" name="search-number" id="search_number" min="1" max="100" placeholder="Number of images" >
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>Size</legend>
+            <p>
+                <input type="radio" checked='true' name="size" id="size_1" value="m">
+                <label for="size_1">Small</label>
+            </p>
+            <p>
+                <input type="radio" name="size" id="size_2" value="z">
+                <label for="size_2">Medium</label>
+            </p>
+            <p>
+                <input type="radio" name="size" id="size_3" value="b">
+                <label for="size_3">Large</label>
+            </p>
+        </fieldset>
+        <p>
+            <input type="button" value="Search" id='search'>
+        </p>
+    </form>
+    <div class='flex-wrapper'>
+        <h2 id='message'></h2>
+    </div>
+</body>
+
+</html>
