@@ -10,11 +10,14 @@ btn.addEventListener("click", function(){
 
   //Hämta alla input-värden, spara i ett objekt och använd värdena i URL:en 
   const input = getInputValues();
+  // console.log(input);
+
   const url = `https://www.flickr.com/services/rest/?api_key=${KEY}&method=flickr.photos.search&text=${input.term}&format=json&nojsoncallback=1&per_page=${input.number}&page=1`;
 
   //Hämta data till fotona med URL:en
   fetch(url)
-    .then(function (response) {
+    .then( function(response) {
+      // console.log(response);
       if (response.status >= 200 && response.status < 300) {
         return response.json(); //Gör om json-datan till JS-objekt
       } else {
@@ -22,6 +25,8 @@ btn.addEventListener("click", function(){
       }
     })
     .then(function (data) {
+      console.log(data);
+      const arrayOfPhotos = data.photos.photo;
         //Ta bort meddelandet innan vi visar bilderna
       const h2 = document.querySelector("#message");
       h2.style.display = "none";
@@ -29,7 +34,7 @@ btn.addEventListener("click", function(){
       //Vi anropar getImageUrl och displayImage en gång för varje foto
       //getImageUrl returnerar url:en till fotot som sedan skickas till display image
       for (let i = 0; i < input.number; i++) {
-        const imgUrl = getImageUrl(data.photos.photo[i], input.size);
+        const imgUrl = getImageUrl(arrayOfPhotos[i], input.size);
         displayImg(imgUrl, input.size);
       }
     })
@@ -66,8 +71,8 @@ function removeImages() {
 
 //här pusslar vi ihop bild-urlen
 function getImageUrl(photoObject, size) {
-  const photo = photoObject;
-  const imgUrl = `https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_${size}.jpg`;
+  // console.log(photoObject);
+  const imgUrl = `https://live.staticflickr.com/${photoObject.server}/${photoObject.id}_${photoObject.secret}_${size}.jpg`;
 
   return imgUrl;
 }
@@ -92,9 +97,7 @@ function displayImg(url, size) {
 
 //Lägg till ett meddelande till användaren
 function setMessage(message) {
-  const flexWrapper = document.querySelector(".flex-wrapper");
   const h2 = document.querySelector("#message");
   h2.style.display = "block";
   h2.innerText = message;
-  flexWrapper.appendChild(h2);
 }
