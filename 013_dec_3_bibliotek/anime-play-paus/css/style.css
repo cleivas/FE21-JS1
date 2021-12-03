@@ -1,0 +1,12 @@
+.controls{
+    margin: 2rem;
+    text-align: center;
+}
+
+.animation div{
+    width: 30px;
+    height: 30px;
+    background-color: hsl(330, 90%, 71%);
+    border-radius: 50%;
+    position: absolute;
+}
