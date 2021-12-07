@@ -1,0 +1,21 @@
+.container div div{
+    text-align: center;
+    padding: 1rem;
+}
+#row1{
+    margin-top: 2rem;
+}
+#row1 div{
+    background-color: hsl(0, 82%, 74%);
+    border: 1px solid white;
+}
+
+#row2 div{
+    background-color: hsl(120, 41%, 65%);
+    border: 1px solid white;
+}
+
+#row3 div{
+    background-color: hsl(51, 100%, 70%);
+    border: 1px solid white;
+}
