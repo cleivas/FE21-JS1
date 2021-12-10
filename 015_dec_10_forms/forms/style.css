@@ -1,0 +1,23 @@
+input:hover{
+    background-color: blueviolet;
+}
+
+input:focus{
+    background-color: hotpink;
+}
+
+input:active{
+    background-color: red;
+}
+
+input:required{
+    border: 3px solid red;
+}
+
+input:invalid{
+    color: red;
+}
+
+input:valid{
+    color: green;
+}

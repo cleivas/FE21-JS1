@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+    <title>Document</title>
+</head>
+<body>
+  <form >
+    <label for="search">Sök</label>
+    <input type="text" name='searchTerm' id='search' placeholder="Search for something" required>
+
+    <fieldset>
+      <legend>Size</legend>
+      <p>
+        <input type="radio" name="size" id="size-1" value='LARGE'>
+        <label for="size-1"  >Large</label>
+      </p>
+      <p>
+        <input type="radio" name="size" id="size-2" value='MEDIUM'>
+        <label for="size-2">Medium</label>
+      </p>
+      <p>
+        <input type="radio" name="size" id="size-3" value='SMALL'>
+        <label for="size-3" >Small</label>
+      </p>
+    </fieldset>
+    <p>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email">
+    </p>
+    <p>
+      <button type='submit'> Skicka in!</button>
+    </p>
+    <!-- <input type="submit" value="Skicka in"> -->
+
+  </form>
+</body>
+</html>
