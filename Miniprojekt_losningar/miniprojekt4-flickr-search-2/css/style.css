@@ -1,0 +1,38 @@
+form{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 0 auto 3rem;
+}
+form>*{ 
+    margin: 1rem 1rem;
+}
+input[type='text']{
+    margin-bottom: .35rem;
+}
+input:focus{
+    border:#ff0084bb 2px solid;
+    outline: #0063dcbb 2px solid;
+    border-radius: 2px; 
+}
+h2{
+    text-align: center;
+}
+.animation{
+    display: none;
+    width: 6rem;
+    margin: 10rem auto 0;
+}
+.animation div{
+    width: 30px;
+    height: 30px;
+    background-color: #ff0084;
+    border-radius: 50%;
+    position: absolute;
+}
+
+#carouselExampleControls{
+    margin: 2rem auto;
+    display: none;
+}
